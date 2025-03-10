@@ -114,7 +114,7 @@ class Model:
                     print(f"Error: {e}")
                 
                 print("Waiting for the next prediction (1 minute)...")
-                time.sleep(60)  # Sleep for 1 hour before the next prediction
+                time.sleep(1) # Sleep for 1 hour before the next prediction
         except Exception as e:
             print(f"An error occurred: {e}")
             ProjectException(e,sys)

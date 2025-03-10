@@ -19,7 +19,7 @@ class Model:
         try:
             self.ticker = ticker
             stock = yf.Ticker(ticker)
-            data = stock.history(period="5d", interval="1m")  # 1-month hourly data
+            data = stock.history(period="7d", interval="1m")  # 1-month hourly data
             pd.DataFrame(data).to_csv(os.path.join(self.path,"data_series.csv"))
             data = data[['Close']].dropna()  # Keep only 'Close' prices
             data.index = data.index.tz_localize(None)  # Remove timezone info
